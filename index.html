@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<meta charset="utf-8">
 	<title>Pacman</title>
 	<style type="text/css">
@@ -117,14 +119,23 @@
 		#right_btn {
 			margin-left: 100px;
 		}
+		.noselect {
+		  -webkit-touch-callout: none; /* iOS Safari */
+		  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+		  -khtml-user-select: none;    /* Konqueror */
+		  -moz-user-select: none;      /* Firefox */
+		  -ms-user-select: none;       /* Internet Explorer/Edge */
+		  user-select: none;           /* Non-prefixed version, currently
+		                                  not supported by any browser */
+		}
 	</style>
 </head>
 <body>
-	<div id="container">
+	<div id="container" class="noselect">
 		<div id="world"></div>
 		<div id="pacman"></div>
 		<div id="ghost"></div>
-		<div id="score">Test Test</div>
+		<div id="score">Score 0</div>
 		<div id="level">Level 1</div>
 		<div id="life_box">
 			<img src="heart.gif">
@@ -132,10 +143,10 @@
 			<div id="life"></div>
 		</div>
 		<div id="arrow">
-			<button onclick="clickArrow('up')" class="updown_btn">▲</button><br>
-			<button onclick="clickArrow('left')">◀</button>
-			<button onclick="clickArrow('right')" id="right_btn">▶</button><br>
-			<button onclick="clickArrow('down')" class="updown_btn">▼</button>
+			<button onclick="clickArrow('up')" class="updown_btn noselect">▲</button><br>
+			<button onclick="clickArrow('left')" class="noselect">◀</button>
+			<button onclick="clickArrow('right')" id="right_btn" class="noselect">▶</button><br>
+			<button onclick="clickArrow('down')" class="updown_btn noselect">▼</button>
 		</div>
 	</div>
 	<script>
